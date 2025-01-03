@@ -19,12 +19,16 @@ class TaskManager {
   }
 
   void updateTask(int id, String? newstatus, DateTime newDueDate) {
-    for (var task in tasks) {
-      if (task.id == id) {
-        task.status = newstatus;
-        task.dueDate = newDueDate;
-        return;
+    try{
+      for (var task in tasks) {
+        if (task.id == id) {
+          task.status = newstatus;
+          task.dueDate = newDueDate;
+          return;
+        }
       }
+    }catch(e){
+      print(e);
     }
   }
   List<Task> showDueDate(){
