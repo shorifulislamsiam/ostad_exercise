@@ -18,10 +18,11 @@ class TaskManager {
     tasks.add(task);
   }
 
-  void updateTask(int id, String? newstatus) {
+  void updateTask(int id, String? newstatus, DateTime newDueDate) {
     for (var task in tasks) {
       if (task.id == id) {
         task.status = newstatus;
+        task.dueDate = newDueDate;
         return;
       }
     }
@@ -45,7 +46,7 @@ main() {
   taskManager.addTask(Task(2, 'Task 2', 'In Progress',DateTime(2025,01,02)));
   print('All tasks:');
   taskManager.listtask();
-  taskManager.updateTask(1, 'Completed');
+  taskManager.updateTask(1, 'Completed',DateTime(26,12,5));
   print('\nUpdated tasks:');
   taskManager.listtask();
 }
