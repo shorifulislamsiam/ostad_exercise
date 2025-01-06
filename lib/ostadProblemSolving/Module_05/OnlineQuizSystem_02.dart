@@ -15,7 +15,6 @@ class Quiz{
     questions.add(question);
   }
   Future<void>  quizQuestion()async {
-
     Future.delayed(Duration(seconds: 02));
     questions=[
       Question(
@@ -23,10 +22,7 @@ class Quiz{
           option:["Dhaka","Rajshahi","Chitagang","Barishal"],
           correctOptionIndex:0,
           points:5),
-
     ];
-
-
   }
   void startQuiz(){
     int total =0;
