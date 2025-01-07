@@ -55,14 +55,16 @@ class WeatherMonitor {
 
 void main() {
   City dhaka = City(name: 'Dhaka', temperature: 30.0, condition: 'Sunny', lastUpdated: DateTime.now());
-
   City chittagong = City(name:'Chittagong', temperature:28.0, condition:'Rainy',lastUpdated: DateTime.now());
   City sylhet = City(name:'Sylhet', temperature:25.0, condition:'Cloudy',lastUpdated: DateTime.now());
   WeatherMonitor weatherMonitor = WeatherMonitor();
-  weatherMonitor.addCityWeather(dhaka); weatherMonitor.addCityWeather(chittagong);
-  weatherMonitor.addCityWeather(sylhet); weatherMonitor.showCitySortedByTempearature();
+  weatherMonitor.addCityWeather(dhaka);
+  weatherMonitor.addCityWeather(chittagong);
+  weatherMonitor.addCityWeather(sylhet);
+  weatherMonitor.showCitySortedByTempearature();
   weatherMonitor.showCitiesWithCondition('Rainy');
-  // Update weather conditions
+  //Update weather conditions
+  print("Update weather conditions");
   weatherMonitor.updateWeather('Dhaka', 29.0, 'Cloudy',DateTime.now());
   weatherMonitor.showCitiesWithCondition('Cloudy');
   // Simulate fetching new weather data
